@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>KFC - Menú</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header class="header">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/b/bf/KFC_logo.svg" alt="KFC Logo" class="logo">
+
+        <div class="filters">
+            <select id="language">
+                <option>Idioma</option>
+                <option>Español</option>
+                <option>Inglés</option>
+            </select>
+
+            <select id="theme">
+                <option>Tema</option>
+                <option>Claro</option>
+                <option>Oscuro</option>
+            </select>
+        </div>
+    </header>
+
+    <!-- MAIN -->
+    <main class="products">
+
+        <!-- TARJETA -->
+        <div class="card">
+            <img src="https://images.kfc.co.cr/images/products/bbq-crunch.png" alt="BBQ Crunch">
+            <p class="price">8.900</p>
+            <h3>BBQ Crunch</h3>
+            <p class="description">1 Sandwich BBQ Crunch (1 Filete de pollo apanado)</p>
+            <button onclick="buyProduct('BBQ Crunch')">Comprar</button>
+        </div>
+
+        <div class="card">
+            <img src="https://images.kfc.co.cr/images/products/kentucky-sandwich.png" alt="Kentucky Sandwich">
+            <p class="price">15.900</p>
+            <h3>Kentucky Sandwich</h3>
+            <p class="description">Filete de pechuga de pollo apanado, pepinillos</p>
+            <button onclick="buyProduct('Kentucky Sandwich')">Comprar</button>
+        </div>
+
+        <div class="card">
+            <img src="https://images.kfc.co.cr/images/products/combo-bbq.png" alt="Combo BBQ">
+            <p class="price">15.900</p>
+            <h3>Combo BBQ Crunch</h3>
+            <p class="description">Sandwich + Papa pequeña + Gaseosa</p>
+            <button onclick="buyProduct('Combo BBQ Crunch')">Comprar</button>
+        </div>
+
+        <div class="card">
+            <img src="https://images.kfc.co.cr/images/products/coronel.png" alt="Coronel">
+            <p class="price">16.900</p>
+            <h3>Kentucky Coronel</h3>
+            <p class="description">Filete de pechuga de pollo apanado</p>
+            <button onclick="buyProduct('Kentucky Coronel')">Comprar</button>
+        </div>
+
+    </main>
+
+    <!-- JS -->
+    <script src="script.js"></script>
+</body>
+</html>
