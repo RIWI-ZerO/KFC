@@ -2,72 +2,133 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>KFC - Menú</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- CSS -->
+    <title>KFC - Menú</title>
+    <!-- Vinculamos nuestro archivo de estilos CSS -->
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-    <!-- HEADER -->
+    <!-- CABECERA (HEADER) -->
+    <!-- Aquí va el logo y los filtros de idioma/tema -->
     <header class="header">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/b/bf/KFC_logo.svg" alt="KFC Logo" class="logo">
+        <div class="logo-container">
+            <!-- Logo de KFC -->
+            <img src="Imagenes/Logo.png" alt="KFC Logo" class="logo">
+        </div>
 
         <div class="filters">
-            <select id="language">
-                <option>Idioma</option>
-                <option>Español</option>
-                <option>Inglés</option>
+            <!-- Selector de Idioma -->
+            <select id="language" class="filter-select">
+                <option value="es" selected="" disabled="">Idioma</option>
+                <option value="es">Español</option>
+                <option value="en">Inglés</option>
             </select>
 
-            <select id="theme">
-                <option>Tema</option>
-                <option>Claro</option>
-                <option>Oscuro</option>
+            <!-- Selector de Tema -->
+            <select id="theme" class="filter-select">
+                <option value="Cambi" selected="" disabled="">Tema</option>
+                <option value="Claro">Claro</option>
+                <option value="Oscuro">Oscuro</option>
             </select>
         </div>
     </header>
 
-    <!-- MAIN -->
-    <main class="products">
+    <!-- CONTENIDO PRINCIPAL (MAIN) -->
+    <!-- Aquí mostramos la cuadrícula de productos -->
+    <main class="products-container">
 
-        <!-- TARJETA -->
-        <div class="card">
-            <img src="https://images.kfc.co.cr/images/products/bbq-crunch.png" alt="BBQ Crunch">
-            <p class="price">8.900</p>
-            <h3>BBQ Crunch</h3>
-            <p class="description">1 Sandwich BBQ Crunch (1 Filete de pollo apanado)</p>
-            <button onclick="buyProduct('BBQ Crunch')">Comprar</button>
+        <!-- PRODUCTO 1 -->
+        <div class="product-card">
+            <img src="Imagenes/hamburguesa-1.png" alt="BBQ Crunch" class="product-img">
+            <div class="product-info">
+                <p class="price">8.900</p>
+                <h3 class="product-title" data-en="BBQ Crunch" data-es="BBQ Crunch">BBQ Crunch</h3>
+                <p class="description" data-en="1 BBQ Crunch Sandwich (1 Breaded chicken fillet)" data-es="1 Sandwich BBQ Crunch (1 Filete de pollo apanado)">1 Sandwich BBQ Crunch (1 Filete de pollo apanado)</p>
+                <button class="btn-buy" onclick="buyProduct('BBQ Crunch')" data-en="Buy" data-es="Comprar">Comprar</button>
+            </div>
         </div>
 
-        <div class="card">
-            <img src="https://images.kfc.co.cr/images/products/kentucky-sandwich.png" alt="Kentucky Sandwich">
-            <p class="price">15.900</p>
-            <h3>Kentucky Sandwich</h3>
-            <p class="description">Filete de pechuga de pollo apanado, pepinillos</p>
-            <button onclick="buyProduct('Kentucky Sandwich')">Comprar</button>
+        <!-- PRODUCTO 2 -->
+        <div class="product-card">
+            <img src="Imagenes/hamburguesa-2.png" alt="Kentucky Sandwich" class="product-img">
+            <div class="product-info">
+                <p class="price">15.900</p>
+                <h3 class="product-title" data-en="Kentucky Sandwich" data-es="Kentucky Sandwich">Kentucky Sandwich</h3>
+                <p class="description" data-en="1 Kentucky hamburger / Sandwich (1 Breaded chicken breast fillet, pickles,...)" data-es="1 Kentucky hamburguesa / Sandwich(1 Filete de pechuga de pollo apanado, pepinillos,...)">1 Kentucky hamburguesa / Sandwich(1 Filete de pechuga de pollo apanado, pepinillos,...)</p>
+                <button class="btn-buy" onclick="buyProduct('Kentucky Sandwich')" data-en="Buy" data-es="Comprar">Comprar</button>
+            </div>
         </div>
 
-        <div class="card">
-            <img src="https://images.kfc.co.cr/images/products/combo-bbq.png" alt="Combo BBQ">
-            <p class="price">15.900</p>
-            <h3>Combo BBQ Crunch</h3>
-            <p class="description">Sandwich + Papa pequeña + Gaseosa</p>
-            <button onclick="buyProduct('Combo BBQ Crunch')">Comprar</button>
+        <!-- PRODUCTO 3 -->
+        <div class="product-card">
+            <img src="Imagenes/hamburguesa-3.png" alt="Combo BBQ Crunch" class="product-img">
+            <div class="product-info">
+                <p class="price">15.900</p>
+                <h3 class="product-title" data-en="Combo BBQ Crunch" data-es="Combo BBQ Crunch">Combo BBQ Crunch</h3>
+                <p class="description" data-en="1 BBQ Crunch Sandwich + 1 Small Fries + 1 Soda PET" data-es="1 Sandwich BBQ Crunch (1 Filete de pollo apanado) + 1 Papa Pequeña + 1 Gaseosa PET">1 Sandwich BBQ Crunch (1 Filete de pollo apanado) + 1 Papa Pequeña + 1 Gaseosa PET</p>
+                <button class="btn-buy" onclick="buyProduct('Combo BBQ Crunch')" data-en="Buy" data-es="Comprar">Comprar</button>
+            </div>
         </div>
 
-        <div class="card">
-            <img src="https://images.kfc.co.cr/images/products/coronel.png" alt="Coronel">
-            <p class="price">16.900</p>
-            <h3>Kentucky Coronel</h3>
-            <p class="description">Filete de pechuga de pollo apanado</p>
-            <button onclick="buyProduct('Kentucky Coronel')">Comprar</button>
+        <!-- PRODUCTO 4 -->
+        <div class="product-card">
+            <img src="Imagenes/hamburguesa-4.png" alt="Kentucky Coronel Sandwich" class="product-img">
+            <div class="product-info">
+                <p class="price">16.900</p>
+                <h3 class="product-title" data-en="Kentucky Coronel Sandwich" data-es="Kentucky Coronel Sandwich">Kentucky Coronel Sandwich</h3>
+                <p class="description" data-en="1 Kentucky Colonel hamburger / Sandwich (1 Breaded chicken breast fillet, Salad...)" data-es="1 Kentucky Coronel hamburguesa / Sandwich (1 Filete de pechuga de pollo apanado, Ensalada...)">1 Kentucky Coronel hamburguesa / Sandwich (1 Filete de pechuga de pollo apanado, Ensalada...)</p>
+                <button class="btn-buy" onclick="buyProduct('Kentucky Coronel Sandwich')" data-en="Buy" data-es="Comprar">Comprar</button>
+            </div>
+        </div>
+
+        <!-- PRODUCTO 5 -->
+        <div class="product-card">
+            <img src="Imagenes/hamburguesa-5.png" alt="Combo Kentucky Sandwich" class="product-img">
+            <div class="product-info">
+                <p class="price">21.900</p>
+                <h3 class="product-title" data-en="Combo Kentucky Sandwich" data-es="Combo Kentucky Sandwich">Combo Kentucky Sandwich</h3>
+                <p class="description" data-en="1 Kentucky hamburger / Sandwich (1 Breaded chicken breast fillet, pickles,...)" data-es="1 Kentucky hamburguesa / Sandwich (1 Filete de pechuga de pollo apanado, pepinillos,...)">1 Kentucky hamburguesa / Sandwich (1 Filete de pechuga de pollo apanado, pepinillos,...)</p>
+                <button class="btn-buy" onclick="buyProduct('Combo Kentucky Sandwich')" data-en="Buy" data-es="Comprar">Comprar</button>
+            </div>
+        </div>
+
+        <!-- PRODUCTO 6 -->
+        <div class="product-card">
+            <img src="Imagenes/hamburguesa-6.png" alt="Combo Kentucky Coronel" class="product-img">
+            <div class="product-info">
+                <p class="price">22.900</p>
+                <h3 class="product-title" data-en="Combo Kentucky Coronel Sandwich" data-es="Combo Kentucky Coronel Sandwich">Combo Kentucky Coronel Sandwich</h3>
+                <p class="description" data-en="1 Kentucky Colonel hamburger / Sandwich (1 Breaded chicken breast fillet, Salad...)." data-es="1 Kentucky Coronel hamburguesa / Sandwich (1 Filete de pechuga de pollo apanado, Ensalada...).">1 Kentucky Coronel hamburguesa / Sandwich (1 Filete de pechuga de pollo apanado, Ensalada...).</p>
+                <button class="btn-buy" onclick="buyProduct('Combo Kentucky Coronel Sandwich')" data-en="Buy" data-es="Comprar">Comprar</button>
+            </div>
+        </div>
+
+        <!-- PRODUCTO 7 -->
+        <div class="product-card">
+            <img src="Imagenes/hamburguesa-7.png" alt="Sandwich Crispy BBQ" class="product-img">
+            <div class="product-info">
+                <p class="price">23.900</p>
+                <h3 class="product-title" data-en="Sandwich Crispy BBQ" data-es="Sandwich Crispy BBQ">Sandwich Crispy BBQ</h3>
+                <p class="description" data-en="1 Crispy BBQ Sandwich (1 Extra large chicken breast, triple breaded, crisp onion...)." data-es="1 Sandwich Crispy BBQ (1 Filete de pechuga extra grande, triple empanizado, cebolla crisp...).">1 Sandwich Crispy BBQ (1 Filete de pechuga extra grande, triple empanizado, cebolla crisp...).</p>
+                <button class="btn-buy" onclick="buyProduct('Sandwich Crispy BBQ')" data-en="Buy" data-es="Comprar">Comprar</button>
+            </div>
+        </div>
+
+        <!-- PRODUCTO 8 -->
+        <div class="product-card">
+            <img src="Imagenes/hamburguesa-8.png" alt="Combo Sandwich Crispy BBQ" class="product-img">
+            <div class="product-info">
+                <p class="price">29.900</p>
+                <h3 class="product-title" data-en="Combo Sandwich Crispy BBQ" data-es="Combo Sandwich Crispy BBQ">Combo Sandwich Crispy BBQ</h3>
+                <p class="description" data-en="1 Crispy BBQ Sandwich (1 Extra large chicken breast, triple breaded, crisp onion...)" data-es="1 Sandwich Crispy BBQ (1 Filete de pechuga extra grande, triple empanizado, cebolla crisp...)">1 Sandwich Crispy BBQ (1 Filete de pechuga extra grande, triple empanizado, cebolla crisp...)</p>
+                <button class="btn-buy" onclick="buyProduct('Combo Sandwich Crispy BBQ')" data-en="Buy" data-es="Comprar">Comprar</button>
+            </div>
         </div>
 
     </main>
 
-    <!-- JS -->
+    <!-- Vinculamos nuestro archivo de Javascript -->
     <script src="script.js"></script>
 </body>
 </html>
